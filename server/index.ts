@@ -26,7 +26,7 @@ app.post('/api/send-email', (req, res) => {
     const { name, company, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
+        host: 'smtp.mail.me.com',
         port: 587,
         auth: {
             user: process.env.FOLIO_EMAIL,
@@ -39,8 +39,8 @@ app.post('/api/send-email', (req, res) => {
         .then(() => {
             transporter
                 .sendMail({
-                    from: `"${name}" <henryheffernan.folio@gmail.com>`, // sender address
-                    to: 'henryheffernan@gmail.com, henryheffernan.folio@gmail.com', // list of receivers
+                    from: `"${name}" <mason.foreman@icloud.com>`, // sender address
+                    to: 'mason.foreman@student.uts.edu.au, mason@markris.org, masonsportfolio@markris.org', // list of receivers
                     subject: `${name} <${email}> ${
                         company ? `from ${company}` : ''
                     } submitted a contact form`, // Subject line
